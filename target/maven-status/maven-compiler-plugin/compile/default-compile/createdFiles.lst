@@ -1,6 +1,5 @@
-controller\MessageController.class
+DashboardPage.class
 service\MessageService.class
 Consumer.class
 dto\ProductDto.class
-DashboardPageBean.class
 META-INF\sisu\javax.inject.Named

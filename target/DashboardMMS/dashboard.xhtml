@@ -7,7 +7,8 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
 <h:head>
-    <title>Hello Bean</title>
+    <title>Dashboard</title>
+    <h:outputStylesheet name="css/bootstrap.min.css" />
     <script type="text/javascript">
         function reloadPage(message, channel, event) {
             document.location.reload();
@@ -18,17 +19,20 @@
     </script>
 </h:head>
 
-<h:body>
+<h:body styleClass="container">
 
-    <p> <h:outputText value="Hello text !!!!!!!!!!!!!!!!!!!!!!"/> </p>
+    <h3 class="font-weight-bold mt-2 text-center"> <h:outputText value="Advertising stand"/> </h3>
 
-    <hr/>
-
-    <ul>
-        <ui:repeat value="#{productDtoList}" var="product">
-            <li style="color: red"> <h:outputText value="#{product.title}"/> </li>
-        </ui:repeat>
-    </ul>
+    <ui:repeat value="#{productDtoList}" var="product">
+        <div class="item-card card container mt-3 w-75">
+            <p class="font-weight-bold text-warning"> <h:outputText value="#{product.title}"/> </p>
+            <p class="font-weight-bold"> <h:outputText value="Price : #{product.price}"/> &#36; </p>
+            <p class="font-weight-bold"> <h:outputText value="Color : #{product.color}"/> </p>
+            <p class="font-weight-bold"> <h:outputText value="Diagonal : #{product.diagonal}"/> inch </p>
+            <p class="font-weight-bold"> <h:outputText value="Storage : #{product.storage}"/> Gb </p>
+            <p class="font-weight-bold"> <h:outputText value="RAM : #{product.ram}"/> Gb </p>
+        </div>
+    </ui:repeat>
 
 </h:body>
 
